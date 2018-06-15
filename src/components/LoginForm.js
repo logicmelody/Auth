@@ -5,7 +5,7 @@ class LoginForm extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { text: '' };
+    this.state = { email: '' };
   }
 
   render() {
@@ -14,8 +14,9 @@ class LoginForm extends Component {
         <CardSection>
           <Input
             label='Email'
-            value={this.state.text}
-            onChengeText={text => this.setState({ text })}
+            placeholder='user@gmail.com'
+            value={this.state.email}
+            onChengeText={email => this.setState({ email })}
           />
         </CardSection>
 
