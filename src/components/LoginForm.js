@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { Card, CardSection, Button } from './common';
+import { Card, CardSection, Button, Input } from './common';
 
 class LoginForm extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = { text: '' };
+  }
 
   render() {
     return (
       <Card>
         <CardSection>
+          <Input
+            label='Email'
+            value={this.state.text}
+            onChengeText={text => this.setState({ text })}
+          />
         </CardSection>
 
         <CardSection>
