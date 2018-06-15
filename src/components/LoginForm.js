@@ -5,7 +5,10 @@ class LoginForm extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { email: '' };
+    this.state = {
+      email: '',
+      password: ''
+    };
   }
 
   render() {
@@ -21,7 +24,14 @@ class LoginForm extends Component {
         </CardSection>
 
         <CardSection>
-        </CardSection>
+          <Input
+            label='Password'
+            placeholder='password'
+            secureTextEntry
+            value={this.state.password}
+            onChengeText={password => this.setState({ password })}
+          />
+        </CardSection>;
 
         <CardSection>
           <Button onPress={() => console.log('Hello')}>
