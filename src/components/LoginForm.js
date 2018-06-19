@@ -17,8 +17,6 @@ class LoginForm extends Component {
   onButtonPress() {
     const { email, password } = this.state;
 
-    console.log('Email = ' + email + ', Password = ' + password);
-
     firebase.auth().signInWithEmailAndPassword(email, password)
       .catch(() => {
         firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -35,8 +33,8 @@ class LoginForm extends Component {
           <Input
             label='Email'
             placeholder='user@gmail.com'
+            onChangeText={email => this.setState({ email })}
             value={this.state.email}
-            onChengeText={email => this.setState({ email })}
           />
         </CardSection>
 
@@ -45,8 +43,8 @@ class LoginForm extends Component {
             label='Password'
             placeholder='password'
             secureTextEntry
+            onChangeText={password => this.setState({ password })}
             value={this.state.password}
-            onChengeText={password => this.setState({ password })}
           />
         </CardSection>;
 
