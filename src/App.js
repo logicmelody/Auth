@@ -20,14 +20,18 @@ class App extends Component {
     });
 
     firebase.auth().onAuthStateChanged((user) => {
-      this.setState({ loggedIn: user !== undefined });
+      this.setState({ loggedIn: user !== null });
     });
   }
 
   renderContent() {
     switch (this.state.loggedIn) {
       case true:
-        return <Button>Log Out</Button>;
+        return (
+          <Button onPress={() => firebase.auth().signOut()}>
+            Log Out
+          </Button>
+        );
 
       case false:
         return <LoginForm />;
