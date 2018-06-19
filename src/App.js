@@ -37,7 +37,7 @@ class App extends Component {
         return <LoginForm />;
 
       default:
-        return <Spinner style={{ alignSelf: 'center' }} size='large' />;
+        return <Spinner size='large' />;
     }
   }
 
